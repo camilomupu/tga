@@ -137,9 +137,9 @@ if st.session_state.recomendaciones:
     if st.button("Analizar Recomendación"):
         with st.spinner("Analizando la recomendación..."):
             resultado = pregunta_chatGPT(recomendacion_actual)
-            st.write(f"**Análisis de Sentimiento:** {resultado.split('a.')[1].split('b.')[0].strip()}")
-            st.write(f"**Problemas Principales:** {resultado.split('b.')[1].split('c.')[0].strip()}")
-            st.write(f"**Conclusión:** {resultado.split('c.')[1].strip()}")
+            st.write(f"**{resultado.split('a. ')[1].split('b.')[0].strip()}**")
+            st.write(f"**{resultado.split('b. ')[1].split('c.')[0].strip()}**")
+            st.write(f"**{resultado.split('c. ')[1].strip()}**")
 
     col1, col2, _ = st.columns([1, 1, 2])
     if col1.button("Anterior", disabled=index == 0):
@@ -147,7 +147,7 @@ if st.session_state.recomendaciones:
     if col2.button("Siguiente", disabled=index == len(st.session_state.recomendaciones) - 1):
         st.session_state.current_index += 1
 else:
-    st.write("No hay recomendaciones abiertas para analizar.")
+    st.write("No hay recomendaciones abiertas para analizar, consulta los datos.")
 
 # Sección de contacto
 st.markdown("### ¿Tienes alguna pregunta?")
