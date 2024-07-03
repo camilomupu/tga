@@ -137,15 +137,21 @@ if st.session_state.recomendaciones:
     if st.button("Analizar Recomendación"):
         with st.spinner("Analizando la recomendación..."):
             resultado = pregunta_chatGPT(recomendacion_actual)
-            st.write(f"**{resultado.split('a. ')[1].split('b.')[0].strip()}**")
-            st.write(f"**{resultado.split('b. ')[1].split('c.')[0].strip()}**")
+            st.write(f"**{resultado.split('a. ')[1].split('b. ')[0].strip()}**")
+            st.write(f"**{resultado.split('b. ')[1].split('c. ')[0].strip()}**")
             st.write(f"**{resultado.split('c. ')[1].strip()}**")
 
     col1, col2, _ = st.columns([1, 1, 2])
-    if col1.button("Anterior", disabled=index == 0):
-        st.session_state.current_index -= 1
-    if col2.button("Siguiente", disabled=index == len(st.session_state.recomendaciones) - 1):
-        st.session_state.current_index += 1
+    
+    with col1:
+        if st.button("Anterior", disabled=index == 0):
+            st.session_state.current_index -= 1
+            st.experimental_rerun()  # Actualiza la página después de cambiar el índice
+
+    with col2:
+        if st.button("Siguiente", disabled=index == len(st.session_state.recomendaciones) - 1):
+            st.session_state.current_index += 1
+            st.experimental_rerun()  # Actualiza la página después de cambiar el índice
 else:
     st.write("No hay recomendaciones abiertas para analizar, consulta los datos.")
 
