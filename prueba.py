@@ -77,7 +77,9 @@ if st.button("Realizar Consultas"):
     # Sexta consulta, días, meses que llevo la encuesta
     tiempo_encuesta = calcular_tiempo_encuesta(df)
     # Séptima consulta, obtener recomendaciones abiertas no nulas
-    recomendaciones_abiertas = df[df["recomendacion_abierta"].notnull()]["recomendacion_abierta"].tolist()
+    recomendaciones_abiertas = df[df["recomendacion_abierta"].notnull()][
+        "recomendacion_abierta"
+    ].tolist()
 
     # Guardar resultados en el estado de sesión
     st.session_state.resultados = {
@@ -131,7 +133,7 @@ st.markdown("### Análisis de Recomendaciones Abiertas")
 if st.session_state.recomendaciones:
     index = st.session_state.current_index
     recomendacion_actual = st.session_state.recomendaciones[index]
-    
+
     st.write(f"**Recomendación {index + 1}:** {recomendacion_actual}")
 
     if st.button("Analizar Recomendación"):
@@ -145,14 +147,16 @@ if st.session_state.recomendaciones:
                 st.error("Intentalo de nuevo.")
 
     col1, col2, _ = st.columns([1, 1, 2])
-    
+
     with col1:
         if st.button("Anterior", disabled=index == 0):
             st.session_state.current_index -= 1
             st.experimental_rerun()  # Actualiza la página después de cambiar el índice
 
     with col2:
-        if st.button("Siguiente", disabled=index == len(st.session_state.recomendaciones) - 1):
+        if st.button(
+            "Siguiente", disabled=index == len(st.session_state.recomendaciones) - 1
+        ):
             st.session_state.current_index += 1
             st.experimental_rerun()  # Actualiza la página después de cambiar el índice
 else:
