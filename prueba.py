@@ -136,10 +136,13 @@ if st.session_state.recomendaciones:
 
     if st.button("Analizar Recomendación"):
         with st.spinner("Analizando la recomendación..."):
-            resultado = pregunta_chatGPT(recomendacion_actual)
-            st.write(f"**{resultado.split('a. ')[1].split('b. ')[0].strip()}**")
-            st.write(f"**{resultado.split('b. ')[1].split('c. ')[0].strip()}**")
-            st.write(f"**{resultado.split('c. ')[1].strip()}**")
+            try:
+                resultado = pregunta_chatGPT(recomendacion_actual)
+                st.write(f"**{resultado.split('a.')[1].split('b.')[0].strip()}**")
+                st.write(f"**{resultado.split('b.')[1].split('c.')[0].strip()}**")
+                st.write(f"**{resultado.split('c.')[1].strip()}**")
+            except IndexError:
+                st.error("Intentalo de nuevo.")
 
     col1, col2, _ = st.columns([1, 1, 2])
     

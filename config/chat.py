@@ -40,8 +40,9 @@ def pregunta_chatGPT(pregunta: str):
         {
             "role": "system",
             "content": f"Necesitamos realizar un analisis de algunas recomendaciones que nos dieron los usuarios, para ello vas a ver la respuesta que te llegue y responder dos preguntas en base a ello"
-            f"a.Análisis de sentimiento. b.Problemas principales. c.Conclusion"
+            f"a.Análisis de sentimiento(Ten varios sentimientos, como inquietud, considera lo redactado). b.Problemas principales. c.Conclusion"
             f"Vas a ser un chat de una sola respuesta, 100 caracteres maximo para cada una de las respuestas"
+            f"Siempre vas a responder en formato a.Aaaa: y así las tres respuestas, es importante"
             f"Información de la empresa y el proyecto: {informacion_empresa_proyecto}. Intenta ser un sistema solo de ayuda para Trend Group America",
         }
     ]
