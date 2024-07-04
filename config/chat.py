@@ -24,8 +24,6 @@ informacion_empresa_proyecto = {
 }
 
 
-# Consultas
-# falta ponerle el dataframe y pasarle los datos de las respuestas
 def pregunta_chatGPT(pregunta: str):
     """
     Interactúa con el modelo de lenguaje GPT-3.5 Turbo de OpenAI para obtener respuestas a preguntas específicas de la app.
