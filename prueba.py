@@ -21,7 +21,7 @@ st.markdown(
 )
 
 # Mostrar imagen
-img = "https://www.dongee.com/tutoriales/content/images/2023/04/image-13.png"
+img = "https://w7.pngwing.com/pngs/191/90/png-transparent-data-analysis-data-quality-analytics-pattaya-data-pattaya-analysis-thumbnail.png"
 # Centro y redimensiono la imagen usando HTML y CSS
 st.markdown(
     f"""
