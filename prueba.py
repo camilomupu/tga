@@ -8,7 +8,7 @@ from config.chat import pregunta_chatGPT
 
 # Configuración de la página
 st.set_page_config(
-    page_title="PruebaTGA",
+    page_title="AnalisisDatos",
     page_icon="💻",
 )
 
@@ -16,12 +16,12 @@ st.sidebar.success("Consulta tus datos!")
 
 # Título y descripción principal
 st.markdown(
-    "<h1 style='text-align: center;'>Prueba Desarrollador Backend</h1>",
+    "<h1 style='text-align: center;'>Análisis de Datos con ChatGPT</h1>",
     unsafe_allow_html=True,
 )
 
 # Mostrar imagen
-img = "https://www.trendgroupamerica.com/wp-content/uploads/2020/03/logo-tga_w_1.png"
+img = "https://www.dongee.com/tutoriales/content/images/2023/04/image-13.png"
 # Centro y redimensiono la imagen usando HTML y CSS
 st.markdown(
     f"""
