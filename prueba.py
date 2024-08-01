@@ -21,7 +21,7 @@ st.markdown(
 )
 
 # Mostrar imagen
-img = "https://w7.pngwing.com/pngs/191/90/png-transparent-data-analysis-data-quality-analytics-pattaya-data-pattaya-analysis-thumbnail.png"
+img = "https://i.ibb.co/0215fKP/pngwing-com.png"
 # Centro y redimensiono la imagen usando HTML y CSS
 st.markdown(
     f"""
